@@ -1,0 +1,31 @@
+// Sorting list of Date object into ascending and descending order
+
+package corejava;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LocalDateSorting {
+
+	public static void main(String[] args) {
+		LocalDate l = LocalDate.now();
+		LocalDate date = LocalDate.of(2022, 6, 13);
+		LocalDate date1 = LocalDate.of(2022, 7, 13);
+		LocalDate date2 = LocalDate.of(2022, 4, 13);
+		LocalDate date3 = LocalDate.of(2022, 5, 13);
+		List<LocalDate> list= new ArrayList<>();
+		list.add(l);
+		list.add(date);
+		list.add(date1);
+		list.add(date2);
+		list.add(date3);
+		System.out.println(list);
+		//Ascending order
+		System.out.println(list.stream().sorted().collect(Collectors.toList()));
+		//Descending order
+		System.out.println(list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+	}
+}
