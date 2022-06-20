@@ -22,10 +22,34 @@ public class LocalDateSorting {
 		list.add(date1);
 		list.add(date2);
 		list.add(date3);
+		
 		System.out.println(list);
-		//Ascending order
+		
+		//Ascending order using Collections
+		Collections.sort(list);
+		System.out.println(list);
+		
+		//Descending order using Collections
+       		Collections.reverse(list);
+		System.out.println(list);
+		
+		//Descending order using Collections
+		Collections.sort(list, Collections.reverseOrder());
+		System.out.println(list);
+		
+		//Ascending order using Comparator
+		list.sort(Comparator.naturalOrder());
+		System.out.println(list);
+		
+		//Descending order using Comparator
+		list.sort(Comparator.reverseOrder());
+		System.out.println(list);
+		
+		//Ascending order using stream
 		System.out.println(list.stream().sorted().collect(Collectors.toList()));
-		//Descending order
+		
+		//Descending order using stream
 		System.out.println(list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+	
 	}
 }
