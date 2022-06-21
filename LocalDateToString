@@ -15,5 +15,4 @@ public class LocalDateToString {
 		System.out.println(formattedDate);
 		
 	}
-
 }
