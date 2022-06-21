@@ -1,0 +1,19 @@
+package corejava;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class LocalDateToString {
+
+	public static void main(String[] args) {
+		LocalDate ld = LocalDate.now();
+		System.out.println(ld);
+				
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+		String formattedDate = ld.format(formatter);
+		
+		System.out.println(formattedDate);
+		
+	}
+
+}
