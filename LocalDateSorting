@@ -50,6 +50,6 @@ public class LocalDateSorting {
 		
 		//Descending order using stream
 		System.out.println(list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
-	
+
 	}
 }
