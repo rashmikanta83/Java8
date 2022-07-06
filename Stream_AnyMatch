@@ -1,0 +1,30 @@
+package corejava;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class Stream_AnyMatch {
+
+	public static void main(String[] args) {
+		List<Integer> l = new ArrayList<>();
+		l.add(5);
+		l.add(1);
+		l.add(4);
+		l.add(5);
+		l.add(8);
+		
+		System.out.println(l.stream().anyMatch((a) -> a > 5));
+		
+		List<Integer> l1 = new ArrayList<>();
+		l1.add(6);
+		l1.add(6);
+		l1.add(6);
+		l1.add(6);
+		
+		Predicate<Integer> p = input -> input <= 5;
+		System.out.println(l1.stream().anyMatch(p));
+		
+	}
+
+}
