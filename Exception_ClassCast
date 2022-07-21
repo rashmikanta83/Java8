@@ -1,0 +1,39 @@
+package corejava;
+
+class A{
+	int i=10;
+}
+
+class B extends A{
+	int j=20;
+}
+
+class C extends B{
+	int k=30;
+}
+
+class D extends C{
+	int l=40;
+}
+
+public class Exception_ClassCast {
+
+	public static void main(String[] args) {
+		A a= new A();
+		//B b=(B)a; class cast exception here. Child class can not hold parent class object
+		B b= new B();
+		a= b;
+		System.out.println(a.i); //No exception here. Super class can hold child class reference.
+		A a1= new B();
+		B b1= (B)a1;
+		System.out.println(b1.j);
+		
+		//C c= (C)a1; //class cast exception here. Child class can not hold parent class object
+		//C c = (C)b1;  //class cast exception here. Child class can not hold parent class object
+		A a2 = new D();
+		C c= (C)a2;
+		System.out.println(c.k);; //No exception here. Super class can hold child class reference.
+
+	}
+
+}
