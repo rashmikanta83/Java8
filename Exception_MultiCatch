@@ -1,0 +1,22 @@
+package corejava;
+
+public class Exception_MultiCatch {
+
+	public static void main(String[] args) {
+		try {
+			int i=10/0;
+			System.out.println(i);
+			
+			String s = null;
+			System.out.println(s.length());
+			
+		}catch(ArithmeticException|NullPointerException e) {
+			//e=new RuntimeException(); we can not assign anything to e because it is final in multicatch block.
+			System.out.println(e);
+		}catch(RuntimeException e) {
+			e=new NullPointerException(); // Here we can assign to e because e is not final.
+			System.out.println(e);
+		}
+	}
+
+}
