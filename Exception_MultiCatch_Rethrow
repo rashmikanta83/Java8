@@ -1,0 +1,54 @@
+package corejava;
+
+public class Exception_MultiCatch_Rethrow {
+
+	public static void main(String[] args) {
+		try{
+			//rethrow("abc");
+			rethrow("One");
+		}catch(Exception_1 | Exception_2 | Exception_3 e){
+			//below assignment will throw compile time exception because e is final
+			//e = new Exception();
+			System.out.println(e.getMessage());
+		}
+	}
+
+	static void rethrow(String s) throws Exception_1, Exception_2,
+	Exception_3 {
+		try {
+			if (s.equals("One"))
+				throw new Exception_1("One");
+			else if (s.equals("Two"))
+				throw new Exception_2("Two");
+			else
+				throw new Exception_3("Three");
+		} catch (Exception e) {
+			//below assignment disables the improved rethrow exception type checking feature of Java 7
+			// e=new ThirdException();
+			throw e;
+		}
+	}
+
+	static class Exception_1 extends Exception {
+
+		public Exception_1(String msg) {
+			super(msg);
+		}
+	}
+
+	static class Exception_2 extends Exception {
+
+		public Exception_2(String msg) {
+			super(msg);
+		}
+	}
+
+	static class Exception_3 extends Exception {
+
+		public Exception_3(String msg) {
+			super(msg);
+		}
+	}
+
+}
+
